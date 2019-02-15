@@ -1,0 +1,3 @@
+[submodule "LibAPR-java-wrapper"]
+	path = LibAPR-java-wrapper
+	url = git@github.com:AdaptiveParticles/LibAPR-java-wrapper.git

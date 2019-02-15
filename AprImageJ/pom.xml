@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>apr-imagej</groupId>
+        <artifactId>apr-imagej</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <name>Viewer for APR files - application</name>
+    <groupId>AprImageJ</groupId>
+    <artifactId>AprImageJ</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <repositories>
+        <repository>
+            <id>imagej.public</id>
+            <url>http://maven.imagej.net/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>mosaic</groupId>
+            <artifactId>libapr-java-wrapper</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        <groupId>sc.fiji</groupId>
+            <artifactId>bigdataviewer-vistools</artifactId>
+            <version>1.0.0-beta-11</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Create fat JAR with all application dependencies -->
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>AprFullImageLoader.OpenAprCommand</mainClass>
+                        </manifest>
+                    </archive>
+                    <!--<appendAssemblyId>false</appendAssemblyId>-->
+                    <finalName>AprImageJ</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!-- scijava enforcer required fields -->
+    <description>Viewer for APR, based on BigDataViewer</description>
+    <url>https://github.com/krzysg/APR-BigDataViewer</url>
+    <inceptionYear>2018</inceptionYear>
+    <organization>
+        <name>MOSAIC group</name>
+        <url>http://mosaic.mpi-cbg.de</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Simplified BSD License</name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>AprViewer</id>
+            <name>Krzysztof Gonciarz</name>
+            <url>http://github.com/krzysg</url>
+            <roles><role>developer</role></roles>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>None</name>
+        </contributor>
+    </contributors>
+    <mailingLists>
+        <mailingList>
+            <name>ImageJ Forum</name>
+            <archive>http://forum.imagej.net/</archive>
+        </mailingList>
+    </mailingLists>
+    <scm>
+        <connection>scm:git:git://github.com/krzysg/APR-BigDataViewer</connection>
+        <developerConnection>scm:git:git@github.com:krzysg/APR-BigDataViewer</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/krzysg/APR-BigDataViewer</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/krzysg/APR-BigDataViewer/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>None</system>
+    </ciManagement>
+    <properties>
+        <license.licenseName>bsd_2</license.licenseName>
+        <license.copyrightOwners>Krzysztof Gonciarz</license.copyrightOwners>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+</project>

@@ -1,10 +1,6 @@
 package AprFullImageLoader;
 
-import net.imglib2.Cursor;
-import net.imglib2.Interval;
-import net.imglib2.Positionable;
-import net.imglib2.RandomAccess;
-import net.imglib2.RealPositionable;
+import net.imglib2.*;
 import net.imglib2.img.Img;
 import net.imglib2.img.ImgFactory;
 

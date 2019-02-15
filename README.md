@@ -21,9 +21,8 @@ mvn pakcage -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 ```
 * (very) manual installation in ImageJ/Fiji
 ```
-1. copy result jar file from ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT.jar to plugins directory of your ImageJ installation.
-2. copy ./LibAPR-java-wrapper/target/libapr-java-wrapper-0.1.0-SNAPSHOT.jar to jars directory of your ImageJ installation.  
-3. also make sure that you have javacpp-1.4.1.jar in jars directory (can be found in .m2 directory of your home)
+1. copy result jar file from ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar to plugins directory of your ImageJ installation.  
+2. also make sure that you have javacpp-1.4.1.jar in jars directory (can be found in .m2 directory of your home)
 ```
 
 ## Contact us

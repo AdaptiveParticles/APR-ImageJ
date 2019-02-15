@@ -39,33 +39,32 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>AprFullImageLoader.OpenAprCommand</mainClass>
-                        </manifest>
-                    </archive>
-                    <!--<appendAssemblyId>false</appendAssemblyId>-->
-                    <finalName>AprImageJ</finalName>
-                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
+                        <id>generate-allIn1-jar</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>single</goal>
+                            <goal>shade</goal>
                         </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>mosaic:libapr-java-wrapper</include>
+                                    <!--<include>org.bytedeco:javacpp</include>-->
+                                </includes>
+                            </artifactSet>
+                            <outputFile>target/${project.artifactId}-${project.version}_Full.jar</outputFile>
+                            <minimizeJar>false</minimizeJar>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
-
 
     <!-- scijava enforcer required fields -->
     <description>Viewer for APR, based on BigDataViewer</description>

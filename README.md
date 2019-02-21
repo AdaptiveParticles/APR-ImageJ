@@ -1,7 +1,7 @@
 # APR-ImageJ
 
-Simple and initial implementation of APR files support in ImageJ/Fiji.
-After building and installation in ImageJ two new commands are available:
+Simple and initial implementation of APR support in ImageJ/Fiji.
+After building and installation in ImageJ three new commands are available:
 
 * File -> Import -> APR...
 * File -> Export -> APR..
@@ -19,12 +19,19 @@ git clone --recurse https://github.com/AdaptiveParticles/APR-ImageJ.git
 * build java app
 ```
 cd APR-ImageJ
-mvn pakcage -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
+mvn package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 ```
 * (very) manual installation in ImageJ/Fiji
 ```
-1. copy result jar file from ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar to plugins directory of your ImageJ installation.  
-2. also make sure that you have javacpp-1.4.1.jar in jars directory (can be found in .m2 directory of your home)
+1. copy result jar file from ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar 
+   to plugins directory of your ImageJ installation, on Mac/Linux:
+   
+   cp ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar   /my/applications/directory/Fiji.app/plugins
+   
+2. also make sure that you have javacpp-1.4.1.jar in jars directory (can be found in .m2 directory of your home),
+   it is needed since javacpp shipped with Fiji is too old:
+
+   cp ~/.m2/repository/org/bytedeco/javacpp/1.4.1/javacpp-1.4.1.jar /my/applications/directory/Fiji.app/jars/
 ```
 
 ## Contact us

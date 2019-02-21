@@ -15,7 +15,7 @@ import java.io.File;
 @Plugin( type = Command.class, menuPath = "File > Import > APR..." )
 public class OpenAprCommand implements Command
 {
-	@Parameter
+	@Parameter(style = "file")
 	File file;
 
 	@Parameter(type = ItemIO.OUTPUT)

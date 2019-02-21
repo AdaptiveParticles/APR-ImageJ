@@ -4,10 +4,12 @@ Simple and initial implementation of APR files support in ImageJ/Fiji.
 After building and installation in ImageJ two new commands are available:
 
 * File -> Import -> APR...
+* File -> Export -> APR..
 * Plugins > APR > APR (BDV) viewer
 
-First one imports APR file to ImageJ stack which can be later used with any ImageJ algorithm/command (currently quite slow and does not support very large files)
-The other one opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
+First one imports APR file to ImageJ stack which can be later used with any ImageJ algorithm/command (currently quite slow and does not support very large files).
+Second one exports current pixel image to APR format.
+The last one opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
 
 ## How to download, build and install
 * clone repository

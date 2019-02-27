@@ -1,6 +1,6 @@
-package AprFullImageLoader;
+package AdaptiveParticles.AprFullImageLoader;
 
-import mosaic.JavaAPR;
+import AdaptiveParticles.JavaAPR;
 import net.imglib2.Cursor;
 import net.imglib2.cache.img.CellLoader;
 import net.imglib2.cache.img.DiskCachedCellImgFactory;

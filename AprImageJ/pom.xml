@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>apr-imagej</groupId>
-        <artifactId>apr-imagej</artifactId>
-        <version>0.0.1</version>
+        <groupId>org.scijava</groupId>
+        <artifactId>pom-scijava</artifactId>
+        <version>25.0.0</version>
+        <relativePath></relativePath>
     </parent>
 
     <name>Viewer for APR files - application</name>
-    <groupId>AprImageJ</groupId>
+    <groupId>AdaptiveParticles</groupId>
     <artifactId>AprImageJ</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -29,9 +30,25 @@
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-        <groupId>sc.fiji</groupId>
+            <groupId>sc.fiji</groupId>
             <artifactId>bigdataviewer-vistools</artifactId>
             <version>1.0.0-beta-11</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej</artifactId>
+        </dependency>
+        <!-- Use ImageJ1 UI instead ImageJ2 swing (shows white empty window on opening) -->
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej-legacy</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -52,7 +69,7 @@
                         <configuration>
                             <artifactSet>
                                 <includes>
-                                    <include>mosaic:libapr-java-wrapper</include>
+                                    <include>AdaptiveParticles:libapr-java-wrapper</include>
                                     <!--<include>org.bytedeco:javacpp</include>-->
                                 </includes>
                             </artifactSet>
@@ -67,8 +84,8 @@
     </build>
 
     <!-- scijava enforcer required fields -->
-    <description>Viewer for APR, based on BigDataViewer</description>
-    <url>https://github.com/krzysg/APR-BigDataViewer</url>
+    <description>APR support for ImageJ/Fiji</description>
+    <url>https://github.com/AdaptiveParticles/APR-BigDataViewer</url>
     <inceptionYear>2018</inceptionYear>
     <organization>
         <name>MOSAIC group</name>
@@ -82,7 +99,7 @@
     </licenses>
     <developers>
         <developer>
-            <id>AprViewer</id>
+            <id>AdaptiveParticles.AprViewer</id>
             <name>Krzysztof Gonciarz</name>
             <url>http://github.com/krzysg</url>
             <roles><role>developer</role></roles>
@@ -100,18 +117,19 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:git:git://github.com/krzysg/APR-BigDataViewer</connection>
-        <developerConnection>scm:git:git@github.com:krzysg/APR-BigDataViewer</developerConnection>
+        <connection>scm:git:git://github.com/AdaptiveParticles/APR-ImageJ</connection>
+        <developerConnection>scm:git:git@github.com:AdaptiveParticles/APR-ImageJ</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/krzysg/APR-BigDataViewer</url>
+        <url>https://github.com/AdaptiveParticles/APR-ImageJ</url>
     </scm>
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/krzysg/APR-BigDataViewer/issues</url>
+        <url>https://github.com/AdaptiveParticles/APR-ImageJ/issues</url>
     </issueManagement>
     <ciManagement>
         <system>None</system>
     </ciManagement>
+
     <properties>
         <license.licenseName>bsd_2</license.licenseName>
         <license.copyrightOwners>Krzysztof Gonciarz</license.copyrightOwners>

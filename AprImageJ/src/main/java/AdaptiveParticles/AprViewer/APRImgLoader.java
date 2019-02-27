@@ -1,4 +1,4 @@
-package AprViewer;
+package AdaptiveParticles.AprViewer;
 
 /**
  * APR Image Loader - supports only unsigned short type
@@ -14,7 +14,7 @@ import bdv.img.cache.CacheArrayLoader;
 import bdv.img.cache.VolatileGlobalCellCache;
 import bdv.img.hdf5.MipmapInfo;
 import bdv.util.MipmapTransforms;
-import mosaic.JavaAPR;
+import AdaptiveParticles.JavaAPR;
 import mpicbg.spim.data.generic.sequence.ImgLoaderHint;
 import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.cache.volatiles.CacheHints;

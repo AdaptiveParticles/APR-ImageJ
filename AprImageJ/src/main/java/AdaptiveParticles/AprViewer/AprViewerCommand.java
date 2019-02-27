@@ -1,10 +1,10 @@
-package AprViewer;
+package AdaptiveParticles.AprViewer;
 
 import bdv.spimdata.SequenceDescriptionMinimal;
 import bdv.spimdata.SpimDataMinimal;
 import bdv.util.Bdv;
 import bdv.util.BdvFunctions;
-import mosaic.JavaAPR;
+import AdaptiveParticles.JavaAPR;
 import mpicbg.spim.data.generic.sequence.BasicViewSetup;
 import mpicbg.spim.data.registration.ViewRegistration;
 import mpicbg.spim.data.registration.ViewRegistrations;

@@ -1,6 +1,6 @@
-package AprFullImageLoader;
+package AdaptiveParticles.AprFullImageLoader;
 
-import mosaic.JavaAPR;
+import AdaptiveParticles.JavaAPR;
 import net.imagej.Dataset;
 import net.imagej.ImageJ;
 import net.imagej.ImgPlus;
@@ -79,7 +79,7 @@ public class SaveAprCommand implements Command
         ij.command().run(SaveAprCommand.class, true, "iInputImage", dataset, "file", "/Users/gonciarz/outputAPR2").get();
 
         // Read it back from APR
-        ij.command().run(OpenAprCommand.class, true, "file", "/Users/gonciarz/outputAPR2_apr.h5");
+        ij.command().run(AdaptiveParticles.AprFullImageLoader.OpenAprCommand.class, true, "file", "/Users/gonciarz/outputAPR2_apr.h5");
 
         ij.ui().showUI();
 	}

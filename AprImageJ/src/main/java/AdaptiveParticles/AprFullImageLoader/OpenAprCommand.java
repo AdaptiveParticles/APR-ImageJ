@@ -1,6 +1,6 @@
-package AprFullImageLoader;
+package AdaptiveParticles.AprFullImageLoader;
 
-import mosaic.JavaAPR;
+import AdaptiveParticles.JavaAPR;
 import net.imagej.ImageJ;
 import org.scijava.ItemIO;
 import org.scijava.command.Command;

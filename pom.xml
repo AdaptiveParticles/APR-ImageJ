@@ -4,13 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.scijava</groupId>
-        <artifactId>pom-scijava</artifactId>
-        <version>22.3.0</version>
-    </parent>
-
-    <name>ImageJ/Fiji viewer/importer for APR files</name>
+    <name>ImageJ/Fiji plugin for APR files</name>
     <groupId>apr-imagej</groupId>
     <artifactId>apr-imagej</artifactId>
     <version>0.0.1</version>
@@ -21,57 +15,16 @@
         <module>AprImageJ</module>
     </modules>
 
-    <!-- scijava enforcer required fields -->
-    <description>Viewer for APR, based on BigDataViewer</description>
-    <url>https://github.com/krzysg/APR-BigDataViewer</url>
-    <inceptionYear>2018</inceptionYear>
-    <organization>
-        <name>MOSAIC group</name>
-        <url>http://mosaic.mpi-cbg.de</url>
-    </organization>
-    <licenses>
-        <license>
-            <name>Simplified BSD License</name>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <developers>
-        <developer>
-            <id>AprViewer</id>
-            <name>Krzysztof Gonciarz</name>
-            <url>http://github.com/krzysg</url>
-            <roles><role>developer</role></roles>
-        </developer>
-    </developers>
-    <contributors>
-        <contributor>
-            <name>None</name>
-        </contributor>
-    </contributors>
-    <mailingLists>
-        <mailingList>
-            <name>ImageJ Forum</name>
-            <archive>http://forum.imagej.net/</archive>
-        </mailingList>
-    </mailingLists>
-    <scm>
-        <connection>scm:git:git://github.com/AdaptiveParticles/APR-ImageJ</connection>
-        <developerConnection>scm:git:git@github.com:AdaptiveParticles/APR-ImageJ</developerConnection>
-        <tag>HEAD</tag>
-        <url>https://github.com/krzysg/APR-ImageJ</url>
-    </scm>
-    <issueManagement>
-        <system>GitHub Issues</system>
-        <url>https://github.com/krzysg/APR-ImageJ/issues</url>
-    </issueManagement>
-    <ciManagement>
-        <system>None</system>
-    </ciManagement>
-    <properties>
-        <license.licenseName>bsd_2</license.licenseName>
-        <license.copyrightOwners>Krzysztof Gonciarz</license.copyrightOwners>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <mainClass>AdaptiveParticles.AprFullImageLoader.OpenAprCommand</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

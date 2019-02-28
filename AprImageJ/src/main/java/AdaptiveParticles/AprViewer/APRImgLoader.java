@@ -14,7 +14,7 @@ import bdv.img.cache.CacheArrayLoader;
 import bdv.img.cache.VolatileGlobalCellCache;
 import bdv.img.hdf5.MipmapInfo;
 import bdv.util.MipmapTransforms;
-import AdaptiveParticles.JavaAPR;
+import adaptiveparticles.apr.AprBasicOps;
 import mpicbg.spim.data.generic.sequence.ImgLoaderHint;
 import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.cache.volatiles.CacheHints;
@@ -35,7 +35,7 @@ public class APRImgLoader implements ViewerImgLoader {
     private final VolatileGlobalCellCache cache;
     private final APRSetupImgLoader setupImgLoader;
 
-    public APRImgLoader(final JavaAPR apr, final int[] cellDimensions, final int numLevels ) {
+    public APRImgLoader(final AprBasicOps apr, final int[] cellDimensions, final int numLevels ) {
 
         // ------------ Set dimensions from finiest level up to numLevels -------------------
         final long[][] dimensions = new long[numLevels][];
@@ -74,11 +74,11 @@ public class APRImgLoader implements ViewerImgLoader {
     }
 
     private class APRArrayLoader implements CacheArrayLoader< VolatileShortArray > {
-        private final JavaAPR apr;
+        private final AprBasicOps apr;
         private final ThreadLocal<ShortBuffer> buffer = ThreadLocal.withInitial(
                 () -> ByteBuffer.allocateDirect(2).order(ByteOrder.nativeOrder()).asShortBuffer());
 
-        public APRArrayLoader(final JavaAPR apr)
+        public APRArrayLoader(final AprBasicOps apr)
         {
             this.apr = apr;
         }

@@ -1,6 +1,6 @@
 package AdaptiveParticles.AprFullImageLoader;
 
-import AdaptiveParticles.JavaAPR;
+import adaptiveparticles.apr.AprBasicOps;
 import net.imglib2.Cursor;
 import net.imglib2.cache.img.CellLoader;
 import net.imglib2.cache.img.DiskCachedCellImgFactory;
@@ -62,15 +62,15 @@ public class AprImg extends ForwardingImg< UnsignedShortType > implements Wrappe
 	}
 
 	private final Img<UnsignedShortType> iImg;
-	private final JavaAPR iAPR;
+	private final AprBasicOps iAPR;
 
-	private AprImg(Img<  UnsignedShortType > img, JavaAPR apr) {
+	private AprImg(Img<  UnsignedShortType > img, AprBasicOps apr) {
 		super(img);
 		iImg = img;
 		iAPR = apr;
 	}
 
-	public static AprImg of(JavaAPR apr) {
+	public static AprImg of(AprBasicOps apr) {
 		FullImageLoader imgLoader = new FullImageLoader(apr.data(), apr.width(), apr.height(), apr.depth());
 		Img<UnsignedShortType> img = imgLoader.getImg();
 		return new AprImg(img, apr);

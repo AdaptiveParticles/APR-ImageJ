@@ -1,6 +1,6 @@
 package AdaptiveParticles.AprFullImageLoader;
 
-import AdaptiveParticles.JavaAPR;
+import adaptiveparticles.apr.AprBasicOps;
 import net.imagej.ImageJ;
 import org.scijava.ItemIO;
 import org.scijava.command.Command;
@@ -23,7 +23,7 @@ public class OpenAprCommand implements Command
 
 	@Override
 	public void run() {
-        JavaAPR apr = new JavaAPR();
+        AprBasicOps apr = new AprBasicOps();
         apr.read( file.getPath() );
         System.out.println( "Loaded image size (w/h/d): " + apr.width() + "/" + apr.height() + "/" + apr.depth() );
         apr.reconstruct();

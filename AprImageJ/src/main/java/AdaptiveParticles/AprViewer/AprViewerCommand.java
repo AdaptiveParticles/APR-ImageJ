@@ -4,7 +4,7 @@ import bdv.spimdata.SequenceDescriptionMinimal;
 import bdv.spimdata.SpimDataMinimal;
 import bdv.util.Bdv;
 import bdv.util.BdvFunctions;
-import AdaptiveParticles.JavaAPR;
+import adaptiveparticles.apr.AprBasicOps;
 import mpicbg.spim.data.generic.sequence.BasicViewSetup;
 import mpicbg.spim.data.registration.ViewRegistration;
 import mpicbg.spim.data.registration.ViewRegistrations;
@@ -32,7 +32,7 @@ public class AprViewerCommand implements Command
 	@Override
 	public void run()
 	{
-		JavaAPR apr = new JavaAPR();
+		AprBasicOps apr = new AprBasicOps();
 		System.out.println( "Loading [" + file.getPath() + "]" );
 		apr.read( file.getPath() );
 		System.out.println( "APR-ImageJ: Loaded image size (w/h/d): " + apr.width() + "/" + apr.height() + "/" + apr.depth() );

@@ -1,6 +1,6 @@
 package AdaptiveParticles.AprFullImageLoader;
 
-import AdaptiveParticles.JavaAPR;
+import adaptiveparticles.apr;
 import net.imagej.Dataset;
 import net.imagej.ImageJ;
 import net.imagej.ImgPlus;
@@ -59,7 +59,7 @@ public class SaveAprCommand implements Command
         }
 
         // get APR stuff done and save it
-        JavaAPR apr = new JavaAPR();
+        apr.Ops apr = new apr.Ops();
         apr.get16bitUnsignedAPR((int) dims[0], (int) dims[1], (int) dims[2], 16, outputBuffer);
         apr.saveAPR(file.getParent() + "/", file.getName());
         System.out.println("DONE.");

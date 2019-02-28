@@ -99,7 +99,7 @@
     </licenses>
     <developers>
         <developer>
-            <id>AdaptiveParticles.AprViewer</id>
+            <id>adaptiveparticles.viewer</id>
             <name>Krzysztof Gonciarz</name>
             <url>http://github.com/krzysg</url>
             <roles><role>developer</role></roles>

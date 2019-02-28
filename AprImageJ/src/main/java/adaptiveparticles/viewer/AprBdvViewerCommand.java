@@ -1,4 +1,4 @@
-package AdaptiveParticles.AprViewer;
+package adaptiveparticles.viewer;
 
 import bdv.spimdata.SequenceDescriptionMinimal;
 import bdv.spimdata.SpimDataMinimal;
@@ -24,7 +24,7 @@ import java.util.HashMap;
  * The import APR menu entry.
  */
 @Plugin( type = Command.class, menuPath = "Plugins > APR > APR (BDV) viewer" )
-public class AprViewerCommand implements Command
+public class AprBdvViewerCommand implements Command
 {
 	@Parameter
 	File file;
@@ -68,7 +68,7 @@ public class AprViewerCommand implements Command
         ImageJ ij = new ImageJ();
 
         File file = new File("/Volumes/GONCIARZ/AprFiles/new/zebra7GB.h5");
-        ij.command().run(AprViewerCommand.class, true, "file", file);
+        ij.command().run(AprBdvViewerCommand.class, true, "file", file);
         ij.ui().showUI();
 	}
 }

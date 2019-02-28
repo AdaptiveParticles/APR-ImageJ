@@ -1,4 +1,4 @@
-package AdaptiveParticles.AprViewer;
+package adaptiveparticles.viewer;
 
 /**
  * APR Image Loader - supports only unsigned short type

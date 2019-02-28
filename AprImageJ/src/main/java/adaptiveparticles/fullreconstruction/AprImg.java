@@ -1,4 +1,4 @@
-package AdaptiveParticles.AprFullImageLoader;
+package adaptiveparticles.fullreconstruction;
 
 import adaptiveparticles.apr.AprBasicOps;
 import net.imglib2.Cursor;

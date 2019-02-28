@@ -1,4 +1,4 @@
-package AdaptiveParticles.AprFullImageLoader;
+package adaptiveparticles.fullreconstruction;
 
 import net.imglib2.*;
 import net.imglib2.img.Img;

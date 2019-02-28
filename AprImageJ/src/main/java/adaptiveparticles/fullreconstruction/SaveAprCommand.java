@@ -1,4 +1,4 @@
-package AdaptiveParticles.AprFullImageLoader;
+package adaptiveparticles.fullreconstruction;
 
 import adaptiveparticles.apr;
 import net.imagej.Dataset;
@@ -79,7 +79,7 @@ public class SaveAprCommand implements Command
         ij.command().run(SaveAprCommand.class, true, "iInputImage", dataset, "file", "/Users/gonciarz/outputAPR2").get();
 
         // Read it back from APR
-        ij.command().run(AdaptiveParticles.AprFullImageLoader.OpenAprCommand.class, true, "file", "/Users/gonciarz/outputAPR2_apr.h5");
+        ij.command().run(adaptiveparticles.fullreconstruction.OpenAprCommand.class, true, "file", "/Users/gonciarz/outputAPR2_apr.h5");
 
         ij.ui().showUI();
 	}

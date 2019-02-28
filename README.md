@@ -14,7 +14,7 @@ The last one opens APR image in [BigDataViewer](https://github.com/bigdataviewer
 ## How to download, build and install
 * clone repository
 ```
-git clone --recurse https://github.com/AdaptiveParticles/APR-ImageJ.git
+git clone --recurse https://github.com/adaptiveparticles/APR-ImageJ.git
 ```
 * build java app
 ```

@@ -8,13 +8,20 @@ After building and installation in ImageJ three new commands are available:
 * Plugins > APR > APR (BDV) viewer
 
 First one imports APR file to ImageJ stack which can be later used with any ImageJ algorithm/command (currently quite slow and does not support very large files).
-Second one exports current pixel image to APR format.
+Second one exports current pixel image to APR format. All parameters set to -1 are autmatically detected. Available parameters:
+- I_th intensity_threshold  (will ignore areas of image below this threshold, useful for removing camera artifacts or auto-flouresence)
+- SNR_min minimal_snr (minimal ratio of the signal to the standard deviation of the background, set by default to 6)
+- lambda lambda_value (directly set the value of the gradient smoothing parameter lambda (reasonable range 0.1-10, default: 3)
+- min_signal min_signal_val (directly sets a minimum absolute signal size relative to the local background, also useful for removing background, otherwise set using estimated background noise estimate and minimal SNR of 6)
+- rel_error rel_error_value (Reasonable ranges are from .08-.15), Default: 0.1
+
+
 The last one opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
 
 ## How to download, build and install
 * clone repository
 ```
-git clone --recurse https://github.com/adaptiveparticles/APR-ImageJ.git
+git clone --recurse https://github.com/AdaptiveParticles/APR-ImageJ.git
 ```
 * build java app
 ```

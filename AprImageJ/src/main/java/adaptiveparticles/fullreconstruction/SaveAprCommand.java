@@ -16,7 +16,7 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
-
+import org.scijava.ItemVisibility;
 /**
  * Simple command for exporting pixel images to APR
  * works only on 16-bit APRs and converts any input image to 16-bit unsigned short
@@ -30,10 +30,28 @@ public class SaveAprCommand implements Command
     @Parameter
     OpService ops;
 
-    @Parameter(style = "save")
+    @Parameter(visibility = ItemVisibility.MESSAGE)
+    private final String fileInfo = "Provide filename without extension.\"_apr.h5\" is automatically added.";
+
+    @Parameter(label = "Output file name", style = "save")
     File file;
 
-	@Override
+    @Parameter(visibility = ItemVisibility.MESSAGE)
+    private final String valuesInfo = "Values set to -1 are automatically detected.";
+
+    @Parameter(label = "Intensity Threshold")
+    Float iIntensityTh = -1f;
+    @Parameter(label = "Minimum SNR")
+    Float iSNR = -1f;
+    @Parameter(label = "Lambda")
+    Float iLambda = -1f;
+    @Parameter(label = "Minimum signal")
+    Float iMinSignal = -1f;
+    @Parameter(label = "Relative error")
+    Float iRelError = -1f;
+
+
+    @Override
 	public void run() {
 	    // get 16-bit image
         final Img<UnsignedShortType> imgShort = ops.convert().uint16(iInputImage);
@@ -60,7 +78,14 @@ public class SaveAprCommand implements Command
 
         // get APR stuff done and save it
         apr.Ops apr = new apr.Ops();
-        apr.get16bitUnsignedAPR((int) dims[0], (int) dims[1], (int) dims[2], 16, outputBuffer);
+        adaptiveparticles.apr.APRParameters p = new adaptiveparticles.apr.APRParameters();
+        p.Ip_th(iIntensityTh);
+        p.SNR_min(iSNR);
+        p.lambda(iLambda);
+        p.min_signal(iMinSignal);
+        p.rel_error(iRelError);
+        apr.get16bitUnsignedAPR((int) dims[0], (int) dims[1], (int) dims[2], 16, outputBuffer, p);
+
         apr.saveAPR(file.getParent() + "/", file.getName());
         System.out.println("DONE.");
     }

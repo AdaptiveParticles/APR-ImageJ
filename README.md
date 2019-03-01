@@ -1,7 +1,7 @@
 # APR-ImageJ
 
 
-APR-ImageJ provides support for Adaptive Particle Representation (APR) in ImageJ/Fiji.
+APR-ImageJ provides support for [Adaptive Particle Representation](https://github.com/AdaptiveParticles/LibAPR) (APR) in ImageJ/Fiji.
 
 ## Available commands
 #### File -> Import -> APR...

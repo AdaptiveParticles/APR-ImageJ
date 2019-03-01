@@ -13,7 +13,9 @@ Parameters:
 - Lambda - gradient smoothing parameter (reasonable range 0.1-10)
 - Minimum signal - minimum absolute signal size relative to the local background, useful for removing background 
 - Relative error - maximum reconstruction error relative to local intensity scale (reasonable range 0.08-0.15)
-*Note1: set value of parameter(s) to -1 for automatic detection of best possible values
+
+*Note1: set value of parameter(s) to -1 for automatic detection of best possible values.*
+
 *Note2: extension ```_apr.h5``` is added to exported file name.*
 
 #### Plugins > APR > APR (BDV) viewer

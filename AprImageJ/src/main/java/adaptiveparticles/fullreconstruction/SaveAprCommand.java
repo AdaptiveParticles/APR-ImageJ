@@ -41,7 +41,7 @@ public class SaveAprCommand implements Command
 
     @Parameter(label = "Intensity Threshold")
     Float iIntensityTh = -1f;
-    @Parameter(label = "Minimum SNR")
+    @Parameter(label = "Minimal SNR")
     Float iSNR = -1f;
     @Parameter(label = "Lambda")
     Float iLambda = -1f;

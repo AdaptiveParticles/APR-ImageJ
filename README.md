@@ -1,44 +1,44 @@
 # APR-ImageJ
 
-Simple and initial implementation of APR support in ImageJ/Fiji.
-After building and installation in ImageJ three new commands are available:
 
-* File -> Import -> APR...
-* File -> Export -> APR..
-* Plugins > APR > APR (BDV) viewer
+APR-ImageJ provides support for Adaptive Particle Representation (APR) in ImageJ/Fiji.
 
-First one imports APR file to ImageJ stack which can be later used with any ImageJ algorithm/command (currently quite slow and does not support very large files).
-Second one exports current pixel image to APR format. All parameters set to -1 are autmatically detected. Available parameters:
-- I_th intensity_threshold  (will ignore areas of image below this threshold, useful for removing camera artifacts or auto-flouresence)
-- SNR_min minimal_snr (minimal ratio of the signal to the standard deviation of the background, set by default to 6)
-- lambda lambda_value (directly set the value of the gradient smoothing parameter lambda (reasonable range 0.1-10, default: 3)
-- min_signal min_signal_val (directly sets a minimum absolute signal size relative to the local background, also useful for removing background, otherwise set using estimated background noise estimate and minimal SNR of 6)
-- rel_error rel_error_value (Reasonable ranges are from .08-.15), Default: 0.1
-
-
-The last one opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
+## Available commands
+#### File -> Import -> APR...
+Imports APR file to ImageJ. It reconstructs whole image from APR representation to pixel based (standard ImageJ stack).
+ 
+#### File -> Export -> APR..
+Exports pixel based image to APR format. 
+Parameters:
+- Intensity Threshold - values below this threshold will be ignored, this is useful for removing camera artifacts
+- Minimal SNR - minimal ratio of the signal to the standard deviation of the background
+- Lambda - gradient smoothing parameter (reasonable range 0.1-10)
+- Minimum signal - minimum absolute signal size relative to the local background, useful for removing background 
+- Relative error - maximum reconstruction error relative to local intensity scale (reasonable range 0.08-0.15)
+    
+#### Plugins > APR > APR (BDV) viewer
+Opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
 
 ## How to download, build and install
-* clone repository
+#### clone repository
 ```
 git clone --recurse https://github.com/AdaptiveParticles/APR-ImageJ.git
 ```
-* build java app
+#### build java app
 ```
 cd APR-ImageJ
 mvn package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 ```
-* (very) manual installation in ImageJ/Fiji
-```
-1. copy result jar file from ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar 
+#### (very) manual installation in ImageJ/Fiji
+- copy result jar file from ```./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar``` 
    to plugins directory of your ImageJ installation, on Mac/Linux:
-   
-   cp ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar   /my/applications/directory/Fiji.app/plugins
-   
-2. also make sure that you have javacpp-1.4.1.jar in jars directory (can be found in .m2 directory of your home),
+```
+   cp ./AprImageJ/target/AprImageJ-0.0.1-SNAPSHOT_Full.jar   /my/app/dir/Fiji.app/plugins
+```
+- also make sure that you have ```javacpp-1.4.1.jar``` in jars directory (can be found in .m2 directory of your home),
    it is needed since javacpp shipped with Fiji is too old:
-
-   cp ~/.m2/repository/org/bytedeco/javacpp/1.4.1/javacpp-1.4.1.jar /my/applications/directory/Fiji.app/jars/
+```
+   cp ~/.m2/repository/org/bytedeco/javacpp/1.4.1/javacpp-1.4.1.jar /my/app/dir/Fiji.app/jars/
 ```
 
 ## Contact us

@@ -19,6 +19,13 @@ Parameters:
 #### Plugins > APR > APR (BDV) viewer
 Opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
 
+#### Plugins > APR > APR (bigdatavolume) viewer
+Opens APR image as a volume. This command is based on [BigVolumeViewer](https://github.com/tpietzsch/jogl-minimal).
+
+*Note: this plugin requires BigVolumeViewer already installed in your ImageJ. This can be done by Help->Update->Manage update sites and adding there ```BigVolumeViewer Demo``` to your active updtee sites.* 
+
+![Example of APR volume viewer](AprImageJ/src/main/resources/AprVolumeVierwer.png?raw=true)
+
 ## How to download, build and install
 #### Download source code of APR-ImageJ
 ```

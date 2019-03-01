@@ -13,7 +13,9 @@ Parameters:
 - Lambda - gradient smoothing parameter (reasonable range 0.1-10)
 - Minimum signal - minimum absolute signal size relative to the local background, useful for removing background 
 - Relative error - maximum reconstruction error relative to local intensity scale (reasonable range 0.08-0.15)
-    
+
+*Note: extension ```_apr.h5``` is added to exported file name.*
+
 #### Plugins > APR > APR (BDV) viewer
 Opens APR image in [BigDataViewer](https://github.com/bigdataviewer/bigdataviewer-vistools) using [LibAPR-java-wrapper](https://github.com/krzysg/LibAPR-java-wrapper) to show Adaptive Particle Representation (APR) files. Thanks to reconstruction 'on the fly' it allows to open bigger files that memory available on the machine.
 

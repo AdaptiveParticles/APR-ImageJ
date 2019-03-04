@@ -34,6 +34,7 @@ Opens APR image as a volume. This command is based on [BigVolumeViewer](https://
 git clone --recurse https://github.com/AdaptiveParticles/APR-ImageJ.git
 ```
 #### Build plugin (might take a while)
+*Note: Java 1.8 is required*
 ```
 cd APR-ImageJ
 mvn package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true

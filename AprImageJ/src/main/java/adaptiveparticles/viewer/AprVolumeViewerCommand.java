@@ -22,7 +22,7 @@ import java.util.HashMap;
 /**
  * The import APR menu entry.
  */
-@Plugin( type = Command.class, menuPath = "Plugins > APR > APR (bigdatavolume) viewer" )
+@Plugin( type = Command.class, menuPath = "Plugins > APR > APR (BVV) viewer" )
 public class AprVolumeViewerCommand implements Command
 {
 	@Parameter

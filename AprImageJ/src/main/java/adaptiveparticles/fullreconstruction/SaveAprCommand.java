@@ -30,14 +30,15 @@ public class SaveAprCommand implements Command
     @Parameter
     OpService ops;
 
-    @Parameter(visibility = ItemVisibility.MESSAGE)
-    private final String fileInfo = "Provide filename without extension.\"_apr.h5\" is automatically added.";
+    //TODO: Find a way to not need to click OK when used in macro
+//    @Parameter(visibility = ItemVisibility.MESSAGE, persist = false, required = false)
+//    private final String fileInfo = "Provide filename without extension.\"_apr.h5\" is automatically added.";
 
-    @Parameter(label = "Output file name", style = "save")
+    @Parameter(label = "Output file name (without extension)", style = "save")
     File file;
-
-    @Parameter(visibility = ItemVisibility.MESSAGE)
-    private final String valuesInfo = "Values set to -1 are automatically detected.";
+    //TODO: Find a way to not need to click OK when used in macro
+//    @Parameter(visibility = ItemVisibility.MESSAGE, required = false, persist = false)
+//    private final String valuesInfo = "Values set to -1 are automatically detected.";
 
     @Parameter(label = "Intensity Threshold")
     Float iIntensityTh = -1f;
